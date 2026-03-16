@@ -211,8 +211,9 @@
     <div id="guests-modal" class="hidden no-print fixed inset-0 bg-slate-900/70 backdrop-blur-xl z-[200] items-center justify-center p-6">
         <div class="bg-white rounded-[40px] p-8 max-w-sm w-full shadow-2xl flex flex-col max-h-[90vh]">
             <h2 class="text-3xl font-black mb-2 text-slate-800 tracking-tight">Guest List</h2>
-            <p class="text-sm text-slate-400 mb-6 leading-relaxed">Paste names from Excel (one per line) below.</p>
-            <textarea id="guest-input" class="w-full flex-1 bg-slate-50 border-none p-6 rounded-3xl mb-6 focus:ring-4 focus:ring-sky-50 transition outline-none font-medium resize-none text-slate-700" placeholder="Ming Fang&#10;Shelley Hon&#10;Angel Wei..."></textarea>
+            <p class="text-sm text-slate-400 mb-2 leading-relaxed">Paste names from Excel (one per line) below.</p>
+            <p class="text-[10px] text-sky-600 font-bold mb-4 uppercase tracking-wider">💡 Tip: Type "empty" for a blank name tag</p>
+            <textarea id="guest-input" class="w-full flex-1 bg-slate-50 border-none p-6 rounded-3xl mb-6 focus:ring-4 focus:ring-sky-50 transition outline-none font-medium resize-none text-slate-700" placeholder="Ming Fang&#10;Shelley Hon&#10;empty..."></textarea>
             <div class="flex gap-4">
                 <button onclick="toggleGuests()" class="flex-1 py-4 font-bold text-slate-400">Cancel</button>
                 <button onclick="saveGuests()" class="flex-1 py-4 bg-[#005A7C] text-white rounded-[24px] font-bold shadow-xl shadow-sky-100">Save List</button>
@@ -261,13 +262,15 @@
             const container = document.getElementById('tags-container');
             container.innerHTML = ''; // Clear existing
             guests.forEach(name => {
+                const isBlank = name.toLowerCase().trim() === 'empty';
+                const displayName = isBlank ? '' : name;
                 const tag = document.createElement('div');
                 tag.className = 'name-tag-tent';
                 tag.innerHTML = `
                     <div class="fold-line"></div>
                     <div class="tent-face-blank"></div>
                     <div class="tent-face-name">
-                        <div class="guest-name">${name}</div>
+                        <div class="guest-name">${displayName}</div>
                     </div>
                 `;
                 container.appendChild(tag);
