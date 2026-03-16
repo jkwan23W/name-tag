@@ -103,7 +103,7 @@
         .guest-name {
             font-family: 'Great Vibes', cursive;
             font-size: 24pt; 
-            color: #005A7C; 
+            color: #003B52; /* Darkened from #005A7C for better print contrast */
             text-align: center;
             line-height: 1.2;
         }
@@ -155,20 +155,20 @@
         <div>
             <h1 class="text-xl font-black text-slate-800 tracking-tight">Vinosophy</h1>
             <div class="flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-[#005A7C] animate-pulse"></span>
+                <span class="w-2 h-2 rounded-full bg-[#003B52] animate-pulse"></span>
                 <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Dinner Concierge</p>
             </div>
         </div>
         <div class="flex gap-2">
             <!-- Names Button -->
-            <button onclick="toggleGuests()" class="px-3 h-11 rounded-2xl bg-sky-50 flex items-center justify-center text-[#005A7C] hover:bg-sky-100 transition-all active:scale-95 gap-2">
+            <button onclick="toggleGuests()" class="px-3 h-11 rounded-2xl bg-sky-50 flex items-center justify-center text-[#003B52] hover:bg-sky-100 transition-all active:scale-95 gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
                 <span class="text-xs font-bold uppercase tracking-wider">Names</span>
             </button>
             <!-- Settings Button -->
-            <button onclick="toggleSettings()" class="w-11 h-11 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 hover:text-[#005A7C] transition-all active:bg-slate-100">
+            <button onclick="toggleSettings()" class="w-11 h-11 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-400 hover:text-[#003B52] transition-all active:bg-slate-100">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
             </button>
         </div>
@@ -178,7 +178,7 @@
     <div id="ai-result" class="hidden no-print px-4 pt-4">
         <div class="bg-slate-900 text-white rounded-[32px] p-7 shadow-2xl slide-up border border-white/5">
             <div class="flex justify-between items-center mb-5">
-                <span id="ai-status" class="text-[10px] font-black text-[#005A7C] bg-white px-3 py-1 rounded-full uppercase tracking-widest">Sommelier Insight</span>
+                <span id="ai-status" class="text-[10px] font-black text-[#003B52] bg-white px-3 py-1 rounded-full uppercase tracking-widest">Sommelier Insight</span>
                 <button onclick="document.getElementById('ai-result').classList.add('hidden')" class="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-white">✕</button>
             </div>
             <div id="ai-content" class="text-base font-light italic leading-relaxed whitespace-pre-wrap opacity-90"></div>
@@ -200,10 +200,10 @@
         </button>
 
         <button onclick="getAIDinnerPlan()" id="ai-btn" class="nav-btn">
-            <div class="icon-box bg-[#005A7C]">
+            <div class="icon-box bg-[#003B52]">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
             </div>
-            <span class="text-[11px] font-black text-[#005A7C] uppercase tracking-tighter">AI Butler</span>
+            <span class="text-[11px] font-black text-[#003B52] uppercase tracking-tighter">AI Butler</span>
         </button>
     </div>
 
@@ -216,7 +216,7 @@
             <textarea id="guest-input" class="w-full flex-1 bg-slate-50 border-none p-6 rounded-3xl mb-6 focus:ring-4 focus:ring-sky-50 transition outline-none font-medium resize-none text-slate-700" placeholder="Ming Fang&#10;Shelley Hon&#10;empty..."></textarea>
             <div class="flex gap-4">
                 <button onclick="toggleGuests()" class="flex-1 py-4 font-bold text-slate-400">Cancel</button>
-                <button onclick="saveGuests()" class="flex-1 py-4 bg-[#005A7C] text-white rounded-[24px] font-bold shadow-xl shadow-sky-100">Save List</button>
+                <button onclick="saveGuests()" class="flex-1 py-4 bg-[#003B52] text-white rounded-[24px] font-bold shadow-xl shadow-sky-100">Save List</button>
             </div>
         </div>
     </div>
@@ -229,7 +229,7 @@
             <input type="password" id="api-key-input" class="w-full bg-slate-50 border-none p-6 rounded-3xl mb-9 focus:ring-4 focus:ring-sky-50 transition outline-none font-medium" placeholder="Paste Key here...">
             <div class="flex gap-5">
                 <button onclick="toggleSettings()" class="flex-1 py-5 font-bold text-slate-400">Cancel</button>
-                <button onclick="saveKey()" class="flex-1 py-5 bg-[#005A7C] text-white rounded-[24px] font-bold shadow-xl shadow-sky-100">Save</button>
+                <button onclick="saveKey()" class="flex-1 py-5 bg-[#003B52] text-white rounded-[24px] font-bold shadow-xl shadow-sky-100">Save</button>
             </div>
         </div>
     </div>
